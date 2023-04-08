@@ -1,0 +1,395 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 0 30px;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+header .logo {
+  color: #eaece5;
+}
+header .navbar .nav-menyu li {
+  list-style: none;
+  margin-left: 20px;
+}
+header .navbar .nav-menyu li a {
+  font-family: "Inconsolata", monospace;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(155, 180, 13);
+  position: relative;
+}
+header .navbar .nav-menyu li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: rgb(212, 204, 204);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: 0.5s;
+  transform-origin: left;
+}
+header .navbar .nav-menyu li a:hover::after {
+  transform: scaleX(1);
+}
+header .navbar .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  outline: none;
+  border: 1.5px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 1s;
+  font-family: "Inconsolata", monospace;
+}
+header .navbar .btnLogin-popup:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: red;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+}
+.image .box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../image/image2.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 2s ease height 0.2s ease;
+  display: none;
+}
+.wrapper .login {
+  transition: transform 1s ease;
+  transform: translateX(0);
+}
+.wrapper .register {
+  position: absolute;
+  transform: translateX(400px);
+  transition: none;
+}
+.wrapper .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: #162938;
+  font-size: 2em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.wrapper .form-box {
+  width: 100%;
+  padding: 40px;
+}
+.wrapper .form-box h2 {
+  font-weight: 600;
+  font-size: 2em;
+  font-family: "Inconsolata", monospace;
+  color: #162938;
+  text-align: center;
+}
+.wrapper .form-box .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #162839;
+  margin: 30px 0;
+}
+.wrapper .form-box .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #162938;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.wrapper .form-box .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #162839;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+.wrapper .form-box .input-box input:focus ~ label, .wrapper .form-box .input-box input:valid ~ label {
+  top: -5px;
+}
+.wrapper .form-box .input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #162839;
+  line-height: 60px;
+}
+.wrapper .form-box .remember-forgot {
+  font-size: 0.9em;
+  color: #162839;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .form-box .remember-forgot a {
+  color: #162839;
+  text-decoration: none;
+}
+.wrapper .form-box .remember-forgot a:hover {
+  text-decoration: underline;
+}
+.wrapper .form-box .btn {
+  width: 100%;
+  height: 45px;
+  background: #162839;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+}
+.wrapper .form-box .login-reqister {
+  font-size: 0.9em;
+  color: #162938;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+.wrapper .form-box .login-reqister p a {
+  color: #162839;
+  text-decoration: none;
+}
+.wrapper .form-box .login-reqister p a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  height: 520px;
+}
+.active .login {
+  transition: none;
+  display: none;
+}
+.active .register {
+  transition: transform 0.18s ease;
+  transform: translateX(0);
+  transform: translateY(0);
+}
+
+.video {
+  position: relative;
+  width: 100%;
+}
+.video #next {
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: transparent;
+  color: #162839;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
+  line-height: 55px;
+  font-size: 35px;
+  cursor: pointer;
+  right: 0;
+}
+.video #prew {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: transparent;
+  color: #162839;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
+  line-height: 55px;
+  font-size: 35px;
+  cursor: pointer;
+}
+.video h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  font-family: "Alkatra", cursive;
+  margin: 20px 0;
+}
+.video .slide-container {
+  display: none;
+}
+.video .slide-container .slide {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+}
+.video .slide-container .slide .content {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.video .slide-container .slide .content h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Alkatra", cursive;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate 0.4s linear backwards;
+}
+.video .slide-container .slide .content p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Alkatra", cursive;
+  animation: animate 0.6s linear backwards;
+}
+.video .slide-container .slide .content a {
+  color: #2e1717;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Alkatra", cursive;
+  border: 1px solid black;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(26, 18, 18, 0.3);
+  animation: animate 1s linear backwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-50px);
+  }
+}
+.video .slide-container .slide video {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: fadeIn 0.4s linear;
+}
+.video .active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.8);
+  }
+}
+.video-modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.video-modal .btn-video {
+  position: relative;
+  cursor: pointer;
+}
+.video-modal .btn-video .play {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #f42e79;
+  border-radius: 50%;
+  box-shadow: 0 15px 25px #de0558;
+  transition: 0.5s;
+}
+.video-modal .btn-video .play::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  border: 25px solid #fff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 0px solid transparent;
+}
+.video-modal .active .play {
+  box-shadow: 0 0 0 150vh rgba(244, 46, 121, 0.4);
+}
+.video-modal .clip {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video-modal .clip video {
+  max-width: 90%;
+  height: 100%;
+}/*# sourceMappingURL=style.css.map */
